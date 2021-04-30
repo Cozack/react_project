@@ -1,0 +1,9 @@
+.class {
+    display: flex;
+
+}
+.divka {
+    width: 150px;
+    margin: 10px;
+    border: 1px solid green;
+}
