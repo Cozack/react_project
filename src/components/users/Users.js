@@ -1,6 +1,7 @@
 import {useEffect,useState} from 'react';
 import User from '../user/User';
-import './Users.css'
+import './Users.css';
+import axiosInstance from '../../services/api';
 
 
 
@@ -9,12 +10,8 @@ export default function Users() {
     const [singleUser,setSingleUser] = useState(null);
 
    useEffect(()=>{
-       fetch('https://jsonplaceholder.typicode.com/users')
-           .then(value => value.json())
-           .then(value => {
-               setUsers([...value]);
-           });
-   },[])
+       axiosInstance.get('/users').then(value => setUsers([...value.data]));
+   }, []);
     const search = (id)=>{
        let newUsers =users.find(value => value.id===id)
         console.log(newUsers)
@@ -30,7 +27,7 @@ export default function Users() {
             </div>
             <div className={'secondDiv'}>
                 {
-                    singleUser ? <h2>{singleUser.id} - {singleUser.name}</h2> : (<div>User not defined</div>)
+                    singleUser ? <h2>{singleUser.id} - {singleUser.name}- {singleUser.address.street} - {singleUser.address.city} {singleUser.phone} - {singleUser.username} - {singleUser.website} </h2> : (<div>User not defined</div>)
                 }
             </div>
         </div>

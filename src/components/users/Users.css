@@ -2,11 +2,13 @@
     width: fit-content;
     padding: 10px;
     border: 2px solid green;
+    background: lightpink;
 }
 .secondDiv {
-    width: fit-content;
+    width: 350px;
     border: 2px solid mediumvioletred;
      padding: 10px;
+    background: lightyellow;
 }
 .wrap {
     display: flex;
