@@ -1,0 +1,13 @@
+.mainDiv{
+    width: fit-content;
+    padding: 10px;
+    border: 2px solid green;
+}
+.secondDiv {
+    width: fit-content;
+    border: 2px solid mediumvioletred;
+     padding: 10px;
+}
+.wrap {
+    display: flex;
+}
