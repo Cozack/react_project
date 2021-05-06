@@ -2,6 +2,7 @@ import './App.css';
 import Users from './components/users/Users';
 import Posts from './components/posts/Posts';
 import React from "react";
+import Comments from './components/comments/Comments';
 import {
     BrowserRouter as Router,
     Switch,
@@ -18,9 +19,13 @@ function App() {
                 <br/>
                 <br/>
                 <Link to = {'/posts'}>to posts</Link>
+                <br/>
+                <br/>
+                <Link to = {'/comments'}>to comments</Link>
                 <Switch>
                     <Route path = {'/users'} render={()=>(<Users/>)}/>
                     <Route path = {'/posts'} render={()=>(<Posts/>)}/>
+                    <Route path = {'/comments'} render={()=>(<Comments/>)}/>
                 </Switch>
             </Router>
         </div>
