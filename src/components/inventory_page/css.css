@@ -1,0 +1,7 @@
+.wrap {
+    display: flex;
+}
+.view {}
+.link {
+    padding-left: 10px;
+}
