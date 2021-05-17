@@ -1,33 +1,24 @@
-import {
-    Link
-} from "react-router-dom";
 import {useEffect,useState} from 'react'
 export default function UsersDetails (props){
-    let {match:{params:{id}}} = props
+    let {match:{params:{id}}, location:{state}} = props
     let [user,setUser] = useState(null)
 
-
-
-    const fetchData = async () => {
-        const resp = await fetch("https://jsonplaceholder.typicode.com/posts");
-        const json = await resp.json();
-        const filter = await json.filter(value => value.userId === +id);
-        console.log(filter)
-       setUser(...filter);
-    }
-
-
     useEffect(() => {
+        fetch('https://reqres.in/api/users/'+id )
+            .then(value => value.json())
+            .then(value => {
+                console.log(value)
+                setUser(value.data)
+            })
+    }, [id])
 
-        fetchData();
 
-    }, []);
 
     return (
         <div>
             {
 
-                user && <h4><h5> ID :{user.userId}</h5> <h5>Title : {user.title}</h5>  <h5> Body : {user.body}</h5></h4>
+                user && <h4>ID :{user.id}<br/> Email : {user.email}  <br/> First Name : {user.first_name}<br/> Last Name : {user.last_name}</h4>
             }
         </div>
     );

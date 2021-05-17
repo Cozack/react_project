@@ -4,7 +4,9 @@ import {
 export default function User ({item,url})  {
         return (
             <div>
-<div>{item.id} - {item.name}  <Link to={url+'/'+item.id}>Show User Post</Link> </div>
+<div><div className={'mainDiv'}>{item.id} - {item.first_name}</div>
+    <div className={'secondDiv'}><img src={item.avatar} alt=""/></div>
+    <Link to={url+'/'+item.id}>Show User Details</Link> </div>
             </div>
         );
     }

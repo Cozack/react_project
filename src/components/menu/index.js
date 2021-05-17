@@ -4,9 +4,10 @@ import {
 export default function NavMenu() {
     return (
         <div>
-            <Link to={'/users'}>Users</Link>
+            <Link to={'/Home'}>Home page</Link>
             <br/>
-            <Link to={'/posts'}>Posts</Link>
+            <Link to={'/users'}>Users</Link>
+
         </div>
     );
 }

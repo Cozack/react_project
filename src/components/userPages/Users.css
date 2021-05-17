@@ -1,0 +1,11 @@
+.wrapper {
+    /*display:flex ;*/
+}
+.blocks {
+    display: flex;
+    text-align: center;
+    justify-content: space-around;
+    /*height: 200px;*/
+background: beige;
+
+}
